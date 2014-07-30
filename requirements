@@ -1,0 +1,48 @@
+Implement a cash card - laundry room operation system including a VTM 
+
+(Value Transfer Machine), washers, dryers and money cards. Their physic pictures are 
+
+listed below. 
+
+Figure 1: Money Card (left above) Figure 2: Dryer (Washer is in similar 
+
+design)
+
+Figure 3: VTM (left below)
+
+Add value Card Balance Buy Card Cancel Message Display
+
+Receive Insert Insert
+
+New Money Card Bills here
+
+Money Card here for
+
+Here Card Balance
+
+or to
+
+Add Value
+
+
+You need to define 4 classes as VTM, money cards, washer and dryer individually. 
+
+The majority of class interface methods reside in VTM. Assume that each VTM can 
+
+dynamically create up to 10 money cards after it is replenished, and will display 
+
+proper message when it is out of cards. It only accepts $1, $5, $10 and $20 bills, and 
+
+it adds 10% for each $10 bill, and 15% for each $20. Washer costs $1.25 for each 
+
+load, and dryer costs $0.35 per 10 minutes.
+
+You are required to write an interactive program to simulate the operation with two 
+
+cards, one is bought for $10 and the other is bought for $20. $10 card is used to pay 2 
+
+loads of washing, and 30 minutes drying twice, and refill it with $10. $20 card is
+
+used to pay 4 loads of washing, and 30 minutes drying four times, and refill it with 
+
+$10. Print balance of VTM, two cards, washers and dryers.
