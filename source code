@@ -1,0 +1,120 @@
+// Laundromat.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+class Card {
+public:
+
+Card() // Construct a default Card object
+{
+balance = 0;
+}
+
+Card(double balance) // Construct a Card object with balance newBalance
+{
+this->balance = balance;
+}
+
+double getBalance() // Return balance
+{
+return balance;
+}
+
+void setBalance(double balance) // Modify Card balance
+{
+this->balance = balance;
+}
+
+private:
+
+double balance;
+
+}; // Class needs semicolon
+
+class VTM {
+public:
+VTM()
+{
+numCards = 0;
+totalBalance = 0;
+} // Constructor for VTM class
+
+double getTotalBalance()
+{
+return totalBalance;
+}
+
+void setTotalBalance(double totalBalance)
+{
+this->totalBalance = totalBalance;
+}
+
+void newCard(double amount)
+{
+if (numCards >= maxCards)
+{
+cout << "Out of Cards!" << endl;
+cout << "Please contact the Register." << endl;
+throw runtime_error("maximum cards exceeded!");
+}
+
+Card* temp = new Card(amount);
+pCards[numCards] = temp;
+numCards++;
+}
+
+Card* getCard(int cardNumber)
+{
+return this->pCards[cardNumber];
+}
+
+int getNumCards()
+{
+return numCards;
+}
+
+private:
+static const int CARD_HOLDER_SIZE = 10;
+static const int maxCards = CARD_HOLDER_SIZE; // Initial size of the card holder bay
+Card* pCards[maxCards]; // pCards will point to dynamically allocated array
+int numCards; // number of items in the list
+double totalBalance; // Total balance of the VTM
+}; // Class needs semicolon
+
+class Washer {
+public:
+
+private:
+double totalBalance;
+}; // Class needs semicolon
+
+class Dryer {
+public:
+private:
+}; // Class needs semicolon
+
+int main()
+{
+double amount;
+VTM v;
+int numcards = v.getNumCards();
+cout << numcards;
+v.newCard(100.00);
+numcards = v.getNumCards();
+cout << numcards << endl;
+Card* p = v.getCard(0);
+p->setBalance(130.96);
+cout << p->getBalance() << endl;
+v.newCard(140.58);
+Card* z = v.getCard(1);
+cout << z->getBalance() << endl;
+v.setTotalBalance(1000.96);
+cout << v.getTotalBalance() << endl;
+char sentinel;
+cin >> sentinel;
+if (sentinel = 'x')
+return 0;
+}
